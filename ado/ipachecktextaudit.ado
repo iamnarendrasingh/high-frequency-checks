@@ -119,7 +119,7 @@ prog define ipachecktextaudit, rclass
 				* include prefix in variable names
 				replace fieldname = "`pre'" + fieldname
 
-				collapse (sum) ta_ (first) groupname, by(fieldname `varlist')
+				collapse (sum) `pre' (first) groupname, by(fieldname `varlist')
 				
 				* merge in enumerator and other data
 				loc keeplist: list keepvars - enumerator
