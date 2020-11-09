@@ -284,11 +284,11 @@ if "`summary'"	== "" {
 	foreach sortval in `byvalues' {
 		if "`workbooks'" == "workbooks" {
 			export excel `allvars' if `sortby' == "`sortval'" using "`filename'_`sortval'.xlsx", ///
-			firstrow(varl) sheet("`sortval'") replace `nolabel' locale(C)
+			firstrow(varl) sheet("`sortval'") replace `nolabel' locale(es_CL)
 			}
 		else {
 			export excel `allvars' if `sortby' == "`sortval'" using "`filename'.xlsx", ///
-			firstrow(varl) sheet("`sortval'") sheetreplace `nolabel'  locale(C)
+			firstrow(varl) sheet("`sortval'") sheetreplace `nolabel'  locale(es_CL)
 		}
 			
 		count if `sortby' == "`sortval'"
