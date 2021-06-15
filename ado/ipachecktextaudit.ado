@@ -79,6 +79,10 @@ prog define ipachecktextaudit, rclass
 				cap import delim using "`media'/`taf_`i''", clear
 				if !_rc {
 					gen 	`varlist' = "media\\`taf_`i''"
+					
+					* keep only needed variables
+					keep fieldname totaldurationseconds
+					
 					append	using "`tadata_long'"
 					save 	"`tadata_long'", replace
 				}
@@ -114,7 +118,7 @@ prog define ipachecktextaudit, rclass
 				ren (totaldurationseconds) (`pre')
 				
 				* drop unneeded variables
-				drop fieldfilter firstappearedsecondsintosurvey
+				drop fieldfilter
 				
 				* include prefix in variable names
 				replace fieldname = "`pre'" + fieldname
