@@ -2,8 +2,8 @@
 ** 	TITLE	: 00_master.do
 **	PURPOSE	: Master do file
 **  PROJECT	:		
-**	AUTHOR	: 
-**	DATE	: 
+**	AUTHOR	: Narendra Singh
+**	DATE	: 15 July 2022
 ********************************************************************************
 
 **# setup Stata
@@ -12,7 +12,7 @@
 	cls
 	clear 			all
 	macro drop 		_all
-	version 		17
+	version 		15
 	set min_memory 	1g
 	set maxvar 		32767
 	set more 		off
